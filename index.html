@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CS Masterdoc</title>
+
+    <style>
+     
+        html, body {
+            margin: 0; 
+            padding: 0; 
+            height: 100%; }
+        body {
+            font-family: 'Raleway';
+            background-color: #FFE5EC; 
+            border: 10px inset #FFC2D1;
+            box-sizing: content-box; 
+            padding: 20px; 
+            overflow: hidden;
+            text-align: left;}
+        h1 {
+            font-family: 'raleway' ;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 5px;
+            color: #ab828c;
+            font-size: 30px;
+            text-align: left;}
+        a {
+            color: #ab828c; 
+            font-size: 18px; 
+            font-style: none;
+            text-decoration: none;
+            }
+
+        
+        .search-container {
+            margin: 0;
+            font-size: 2px;
+            font-family: 'Raleway';
+            font-style: normal;
+            padding: 0;
+            text-align: left;
+            margin-left: none;
+            margin-bottom: 10px;}
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'raleway';}
+        button {
+            padding: 10px 15px;
+            margin-left: 5px;
+            border: none;
+            background-color: #ab828c;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'raleway';
+            display: inline-block;}
+        button:hover {
+            background-color: #FFB3C6;}
+        .circle-bullets { 
+            margin-left: 0;}
+    </style>
+
+    <script>
+        function searchNumber() {
+            const input = document.getElementById('search-bar').value;
+            const pages = {
+                "1022": "102210241042.html",
+                "1024": "102210241042.html",
+                "1042": "102210241042.html",
+                "2022": "2022202420272042.html",
+            };
+            if (pages[input]) {
+                window.location.href = pages[input];
+            } else {
+                alert("Page not found for this number. Please try another number.");
+            }
+        }
+    </script>
+    </head>
+
+<body>
+
+    <h1>Genie CS Masterdoc</h1>
+     
+    <div class="search-container">
+        <input type="text" placeholder="Enter a model number..." id="search-bar">
+        <button type="button" onclick="searchNumber()">Search</button>
+    </div>
+    
+  <p> <a href=models.html target="_blank">all models</a></p>
+        <p><a href=troubleshooting.html target="_blank">troubleshooting</a></p>
+        <p><a href=aaq.html target="_blank">aaq replies</a></p>
+        <p><a href=programming.html target="_blank">programming</a></p>
+    <p><a href=resources.html target="_blank">resources</a></p> 
+
+</body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+
+    
+
+    <div class="background"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
