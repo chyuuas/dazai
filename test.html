@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CS Masterdoc</title>
+
+    <style>
+     
+        html, body {
+            margin: 0; 
+            padding: 0; 
+            height: 100%; }
+        body {
+            font-family: 'Raleway';
+            background-color: #FFE5EC; 
+            border: 10px inset #FFC2D1;
+            box-sizing: content-box; 
+            padding: 20px; 
+            overflow: auto;
+            text-align: left;}
+        h1 {
+            font-family: 'raleway' ;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 5px;
+            color: #ab828c;
+            font-size: 30px;
+            text-align: left;}
+        a {
+            color: #ab828c; 
+            font-size: 18px; 
+            font-style: none;
+            text-decoration: none;
+            }
+          
+        .search-container {
+            margin: 0;
+            font-size: 2px;
+            font-family: 'Raleway';
+            font-style: normal;
+            padding: 0;
+            text-align: left;
+            margin-left: none;
+            margin-bottom: 10px;}
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'raleway';}
+        button {
+            padding: 10px 15px;
+            margin-left: 5px;
+            border: none;
+            background-color: #ab828c;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'raleway';
+            display: inline-block;}
+        button:hover {
+            background-color: #FFB3C6;}
+        .circle-bullets { 
+            margin-left: 0;}
+            .description {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+
+    <script>
+        function searchNumber() {
+            const input = document.getElementById('search-bar').value;
+            const pages = {
+                "1022": "102210241042.html",
+                "1024": "102210241042.html",
+                "1042": "102210241042.html",
+                "2022": "2022202420272042.html",
+                "2024": "2022-2024-2027-2042.html",
+                "2027": "2022-2024-2027-2042.html",
+                "2042": "2022-2024-2027-2042.html",
+                "2562": "2562-2564-2568.html",
+                "2564": "2562-2564-2568.html",
+                "2568": "2562-2564-2568.html",
+                "3062": "3062-3064.html",
+                "3064": "3062-3064.html",
+                "3164": "3164.html",
+                "4062": "4062-4064.html",
+                "4064": "4062-4064.html",
+                "4063": "4063.html",
+                "4164": "4164.html",
+                "2060": "2060-3060.html",
+                "3060": "2060-3060.html",
+                "H2000": "H2000-2020-AL1020-2020L.html",
+                "2020": "H2000-2020-AL1020-2020L.html",
+                "AL1020": "H2000-2020-AL1020-2020L.html",
+                "H4000": "H4000-H6000.html",
+                "H6000": "H4000-H6000.html",
+                "IS525": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "IS550": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "IS850": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "IS900": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "IS920": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "ISL920": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "ISL950": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "ISL980": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "IMS1000": "IS525-IS550-IS850-IS900-IS920-ISL920-ISL950-ISL980-IMS1000.html",
+                "Pro95": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "CM7600": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "CM8600": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "CM7600IC": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "CM8600IC": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "CM8600-FN": "Pro95-CM7600-CM8600-CM7600IC-CM8600IC-FN.html",
+                "H8000": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "H8000D": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "ISD990": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "ISD995": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "PRO99": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "PRO99-2IC": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "PRO99FN": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "CMD9900": "H8000-H8000D-ISD990-ISD995-PRO99-PRO99-IC-FN-CMD9900.html",
+                "G": "G-GX-GXL-CM7500-CM8500.html",
+                "GX": "G-GX-GXL-CM7500-CM8500.html",
+                "GXL": "G-GX-GXL-CM7500-CM8500.html",
+                "CM7500": "G-GX-GXL-CM7500-CM8500.html",
+                "CM8500": "G-GX-GXL-CM7500-CM8500.html",
+                "6070H": "6070H-6170H-6172H-6072.html",
+                "6070H-B": "6070H-6170H-6172H-6072.html",
+                "6170H": "6070H-6170H-6172H-6072.html",
+                "6170H-B": "6070H-6170H-6172H-6072.html",
+                "6172H": "6070H-6170H-6172H-6072.html",
+                "6172H-B": "6070H-6170H-6172H-6072.html",
+                "6072": "6070H-6170H-6172H-6072.html",
+                "2033": "2033-3053-3155-3155L-3155D.html",
+                "3053": "2033-3053-3155-3155L-3155D.html",
+                "3155": "2033-3053-3155-3155L-3155D.html",
+                "3155L": "2033-3053-3155-3155L-3155D.html",
+                "3155D": "2033-3053-3155-3155L-3155D.html",
+                "3155LD": "2033-3053-3155-3155L-3155D.html",
+                "2035": "2035-2055-3035-3055.html",
+                "2055": "2035-2055-3035-3055.html",
+                "3035": "2035-2055-3035-3055.html",
+                "3055": "2035-2055-3035-3055.html",
+                "3020H": "3020H.html",
+                "3120H": "3120H.html",
+                "3022": "3022-3024-3042.html",
+                "3024": "3022-3024-3042.html",
+                "3042": "3022-3024-3042.html",
+                "3124": "3124-3142.html",
+                "3142": "3124-3142.html",
+                "4022": "4022-4024-4042.html",
+                "4024": "4022-4024-4042.html",
+                "4042": "4022-4024-4042.html",
+                "4124": "4124-4142.html",
+                "4142": "4124-4142.html",
+                "7035": "7035-7055.html",
+                "7055": "7035-7055.html",
+                "7053": "7053-7135-7155-7155L-7155D.html",
+                "7135": "7053-7135-7155-7155L-7155D.html",
+                "7155": "7053-7135-7155-7155L-7155D.html",
+                "7155L": "7053-7135-7155-7155L-7155D.html",
+                "7155D": "7053-7135-7155-7155L-7155D.html",
+                "PMX300": "PMX300-500IC-PMX500IC-B.html",
+                "PMX300IC": "PMX300-500IC-PMX500IC-B.html",
+                "PMX300IC-A": "PMX300-500IC-PMX500IC-B.html",
+                "PMX300IC-B": "PMX300-500IC-PMX500IC-B.html",
+                "PMX500": "PMX300-500IC-PMX500IC-B.html",
+                "PMX500IC": "PMX300-500IC-PMX500IC-B.html",
+                "PMX500IC-A": "PMX300-500IC-PMX500IC-B.html",
+                "PMX500IC-B": "PMX300-500IC-PMX500IC-B.html",
+                "PMX700": "PMX700-PMX1200-GPS700-GPS1200.html",
+                "PMX1200": "PMX700-PMX1200-GPS700-GPS1200.html",
+                "GPS700": "PMX700-PMX1200-GPS700-GPS1200.html",
+                "GPS1200": "PMX700-PMX1200-GPS700-GPS1200.html"
+            };
+            if (pages[input]) {
+                window.location.href = pages[input];
+            } else {
+                alert("Page not found for this number. Please try another number.");
+            }
+        }
+    </script>
+    </head>
+
+<body>
+
+    <h1>Genie CS Masterdoc</h1>
+    <p><a href=models.html target="_blank">all models</a></p>
+    <p><a href=troubleshooting.html target="_blank">troubleshooting</a></p>
+    <p><a href=aaq.html target="_blank">aaq replies</a></p>
+    <p><a href=programming.html target="_blank">programming</a></p>
+    <p><a href=resources.html target="_blank">resources</a></p> 
+    <div class="search-container">
+        <script async src="https://cse.google.com/cse.js?cx=860fc6a6cc2f64604">
+        </script>
+        <div class="gcse-search"></div>
+    </div>
+
+    
+   
+    
+</body>
+</html>
+</body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+
+    
+
+    <div class="background"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
